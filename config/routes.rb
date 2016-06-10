@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :rsvps
-  # get "/rsvps/new", to: 'rsvps#new', as: 'new_rsvp'
+  # resources :rsvps
+  get "/rsvps/new", to: 'rsvps#new', as: 'new_rsvp'
+  post "/rsvps", to: 'rsvps#create'
   # get "/rsvps/:id", to: 'rsvps#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
