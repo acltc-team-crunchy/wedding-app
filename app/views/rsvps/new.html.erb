@@ -1,18 +1,5 @@
-<%= form_for @rsvp do |f| %>
+<h1>New Reservation</h1>
 
-  <div>
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
-  </div>
+<h2><%= @rsvp.errors.full_messages.join( ",") if @rsvp.errors.any?  %></h2>
 
-  <div>
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
-  </div>
-
-    
-  <div>
-    <%= f.submit %>
-  </div>
-
-<% end %>
+<%= render "form" %>
