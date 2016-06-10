@@ -5,7 +5,7 @@ class RsvpsController < ApplicationController
   end
 
   def create
-    rsvp = Rsvp.new(params[:rsvp])
+    rsvp = Rsvp.new(rsvp_params)
     rsvp.save
   end
 
@@ -13,4 +13,19 @@ class RsvpsController < ApplicationController
   def show
     
   end
+
+
+
+
+
+
+
+  private
+
+  def rsvp_params
+    params.require(:rsvp).permit(:first_name, :last_name, :attending)
+  end
+
+
+
 end
